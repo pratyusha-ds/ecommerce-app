@@ -46,10 +46,7 @@ const Navbar: React.FC = () => {
     navigate("/login");
   };
 
-  const handleSnackbarClose = (
-    event?: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
+  const handleSnackbarClose = (_: any, reason?: string) => {
     if (reason === "clickaway") return;
     setOpenSnackbar(false);
   };

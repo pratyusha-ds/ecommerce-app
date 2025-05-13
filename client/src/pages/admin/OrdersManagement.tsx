@@ -76,7 +76,6 @@ const OrdersManagement = () => {
     loading: detailsLoading,
     error: detailsError,
     data: detailsData,
-    refetch: refetchDetails,
   } = useQuery(GET_ORDER_DETAILS, {
     skip: !selectedOrderId,
     variables: { orderId: selectedOrderId },
@@ -84,7 +83,7 @@ const OrdersManagement = () => {
   const orderDetails: OrderDetails | undefined = detailsData?.admin?.adminOrder;
   const totalOrders = data?.admin?.totalAdminOrders || 0;
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (_: any, newPage: number) => {
     setPage(newPage);
   };
 
@@ -147,10 +146,7 @@ const OrdersManagement = () => {
     }
   };
 
-  const handleCloseSnackbar = (
-    event: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
+  const handleCloseSnackbar = (_: any, reason?: string) => {
     if (reason === "clickaway") {
       return;
     }

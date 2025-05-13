@@ -141,10 +141,7 @@ const ProductsManagement = () => {
       .catch(console.error);
   };
 
-  const handleChangePage = (
-    event: React.ChangeEvent<unknown>,
-    newPage: number
-  ) => {
+  const handleChangePage = (_: any, newPage: number) => {
     setPage(newPage);
   };
 

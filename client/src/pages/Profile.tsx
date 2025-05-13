@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useQuery, useMutation, gql } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import useAuthStore from "../store/userAuthStore";
 import { useNavigate } from "react-router-dom";
 import {

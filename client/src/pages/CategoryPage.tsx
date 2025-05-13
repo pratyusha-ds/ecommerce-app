@@ -32,10 +32,7 @@ const CategoryPage: React.FC = () => {
   const totalCount = data?.categoryProducts?.totalCount || 0;
   const pageCount = Math.ceil(totalCount / ITEMS_PER_PAGE);
 
-  const handleChangePage = (
-    event: React.ChangeEvent<unknown>,
-    newPage: number
-  ) => {
+  const handleChangePage = (_: any, newPage: number) => {
     setPage(newPage);
   };
 
