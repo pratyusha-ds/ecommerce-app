@@ -4,12 +4,13 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  publicDir: "public",
   build: {
+    outDir: "dist-admin",
     rollupOptions: {
       input: {
         admin: path.resolve(__dirname, "admin.html"),
       },
     },
-    outDir: "dist-admin",
   },
 });
