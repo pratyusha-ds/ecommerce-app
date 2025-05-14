@@ -23,7 +23,6 @@ export const signToken = (payload: { id: string; email: string }) => {
 export const getUserFromToken = (req: Request) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    console.log(req.headers.authorization, "a");
     return null;
   }
   const token = authHeader.replace("Bearer ", "").trim();

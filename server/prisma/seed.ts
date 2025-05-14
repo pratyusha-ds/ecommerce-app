@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient();
@@ -50,7 +50,7 @@ async function main() {
 
   const allCategories = await prisma.category.findMany();
 
-  const products = [];
+  const products: Prisma.ProductCreateManyInput[] = [];
 
   for (let i = 1; i <= 100; i++) {
     const category =

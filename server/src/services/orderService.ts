@@ -99,7 +99,6 @@ export const createOrderSession = async (
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  console.log("Creating order with cart id:", cart.id);
 
   const order = await prisma.order.create({
     data: {
@@ -119,7 +118,6 @@ export const createOrderSession = async (
     },
   });
 
-  console.log("Order created:", order);
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: detailedItems.map((item) => ({
@@ -142,20 +140,15 @@ export const createOrderSession = async (
     },
   });
 
-  console.log("Session metadata:", session.metadata);
-
   await prisma.order.update({
     where: { id: order.id },
     data: { stripeSessionId: session.id },
   });
 
-  console.log("Order updated with stripeSessionId:", session.id);
   const updatedOrder = await prisma.order.findUnique({
     where: { id: order.id },
     include: { cart: true },
   });
-
-  console.log("Updated Order:", updatedOrder);
 
   let response: any = {
     sessionId: session.id,

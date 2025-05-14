@@ -30,7 +30,6 @@ export const loginUser = async (
   password: string,
   cartToken?: string
 ) => {
-  console.log(cartToken, "adasiodh");
   const user = await prisma.user.findUnique({
     where: { email },
     select: {
@@ -52,7 +51,6 @@ export const loginUser = async (
       where: { cartToken },
       include: { items: true },
     });
-    console.log(guestCart?.id, "adasiodh");
     if (guestCart && guestCart.items.length > 0) {
       let userCart = await prisma.cart.findFirst({
         where: { userId: user.id },
@@ -74,7 +72,6 @@ export const loginUser = async (
         });
       } else {
         for (const guestItem of guestCart.items) {
-          console.log(guestCart.id, "adasiodh");
           const existing = userCart.items.find(
             (i) => i.productId === guestItem.productId
           );
@@ -94,7 +91,6 @@ export const loginUser = async (
           }
         }
       }
-      console.log(guestCart.id, "adasiodh");
 
       await prisma.cartItem.deleteMany({
         where: { cartId: guestCart.id },

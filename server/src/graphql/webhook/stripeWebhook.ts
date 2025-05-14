@@ -26,7 +26,6 @@ export const handleStripeWebhook = async (req: Request, res: Response) => {
     const session = event.data.object as Stripe.Checkout.Session;
     const orderId = Number(session.metadata?.orderId);
     const cartId = session.metadata?.cartId;
-    console.log("Stripe session metadata:", session.metadata);
 
     if (!orderId) {
       return res.status(400).json({ error: "Missing orderId in metadata" });
@@ -37,8 +36,6 @@ export const handleStripeWebhook = async (req: Request, res: Response) => {
         where: { id: orderId },
         include: { cart: true },
       });
-
-      console.log("Order details:", order);
 
       if (!order) {
         console.error("Order not found for ID:", orderId);
