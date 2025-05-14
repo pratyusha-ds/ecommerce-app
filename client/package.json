@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "build:user": "vite build --config vite.config.ts",
     "build:admin": "vite build --config vite.admin.config.ts"
   },
   "dependencies": {
