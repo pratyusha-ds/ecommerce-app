@@ -60,4 +60,4 @@ This is a simple full-stack e-commerce website built using React, TypeScript, an
 
 ## Credits
 
-All images taken from the free license section of [Unsplash](https://unsplash.com/)
+All images taken from the free license section of [Unsplash](https://unsplash.com/).

@@ -19,6 +19,7 @@ export const SEARCH_PRODUCTS = gql`
       name
       description
       price
+      imageUrl
     }
   }
 `;

@@ -27,7 +27,10 @@ export const getProductsByCategoryId = (categoryId: number) => {
 export const searchProducts = (query: string) => {
   return prisma.product.findMany({
     where: {
-      OR: [{ name: { contains: query } }, { description: { contains: query } }],
+      OR: [
+        { name: { contains: query, mode: "insensitive" } },
+        { description: { contains: query, mode: "insensitive" } },
+      ],
     },
     include: { category: true },
   });

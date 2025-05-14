@@ -12,8 +12,9 @@ import {
 } from "@mui/material";
 import { useLazyQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-
+import { CardMedia } from "@mui/material";
 import { SEARCH_PRODUCTS } from "../graphql/products";
+import { getImageUrl } from "../utils/apiUtils";
 
 const SearchPage: React.FC = () => {
   const [query, setQuery] = useState("");
@@ -61,6 +62,17 @@ const SearchPage: React.FC = () => {
                 },
               }}
             >
+              {product.imageUrl && (
+                <CardMedia
+                  component="img"
+                  image={getImageUrl(product.imageUrl)}
+                  alt={product.name}
+                  sx={{
+                    height: 200,
+                    objectFit: "cover",
+                  }}
+                />
+              )}
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant="h6" gutterBottom>
                   {product.name}
