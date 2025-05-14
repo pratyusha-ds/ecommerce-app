@@ -9,6 +9,8 @@ import OrdersManagement from "./pages/admin/OrdersManagement";
 import UsersManagement from "./pages/admin/UsersManagement";
 import AdminLoginForm from "./pages/admin/AdminLoginForm";
 import PrivateRoute from "./pages/PrivateRoute";
+import { ApolloProvider } from "@apollo/client";
+import { client } from "./apolloClient";
 
 const adminRouter = createBrowserRouter([
   {
@@ -40,6 +42,8 @@ const AdminApp: React.FC = () => {
 
 ReactDOM.createRoot(document.getElementById("admin-root")!).render(
   <React.StrictMode>
-    <AdminApp />
+    <ApolloProvider client={client}>
+      <AdminApp />
+    </ApolloProvider>
   </React.StrictMode>
 );
