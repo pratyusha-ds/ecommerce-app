@@ -20,9 +20,9 @@ This is a simple full-stack e-commerce website built using React, TypeScript, an
 
 ## Live links
 
-**Frontend (Netlify)**: https://pd-e-commerce-app.netlify.app
-**Admin Panel (Netlify)**: https://pd-e-commerce-admin.netlify.app
-**Backend (Render)**: https://ecommerce-app-bt2j.onrender.com
+- **Frontend (Netlify)**: [https://pd-e-commerce-app.netlify.app](https://pd-e-commerce-app.netlify.app)
+- **Admin Panel (Netlify)**: [https://pd-e-commerce-admin.netlify.app ](https://pd-e-commerce-admin.netlify.app)
+- **Backend (Render)**: [https://ecommerce-app-bt2j.onrender.com](https://ecommerce-app-bt2j.onrender.com)
 
 ## Features
 
