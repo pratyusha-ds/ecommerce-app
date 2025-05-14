@@ -63,7 +63,7 @@ const CheckoutPage: React.FC = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/graphql", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/graphql`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

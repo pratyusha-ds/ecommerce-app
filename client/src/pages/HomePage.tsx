@@ -86,10 +86,10 @@ const HomePage = () => {
             <Box
               key={idx}
               sx={{
-                height: { xs: 200, sm: 350 },
+                height: { xs: 220, sm: 350, md: 450 },
+                position: "relative",
                 borderRadius: 3,
                 overflow: "hidden",
-                position: "relative",
               }}
             >
               <Box
@@ -97,31 +97,35 @@ const HomePage = () => {
                 src={slide.img}
                 alt={slide.text}
                 sx={{
-                  display: "block",
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
+                  display: "block",
                 }}
               />
+
               <Box
                 sx={{
                   position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
+                  inset: 0,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "white",
-                  textShadow: "2px 2px 6px rgba(0,0,0,0.8)",
-                  fontWeight: "bold",
-                  fontSize: { xs: "1.8rem", sm: "3rem" },
-                  px: 3,
+                  px: 2,
                   textAlign: "center",
                 }}
               >
-                {slide.text}
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: "white",
+                    fontWeight: "bold",
+                    textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
+                    fontSize: { xs: "1.5rem", sm: "2.5rem", md: "3rem" },
+                  }}
+                >
+                  {slide.text}
+                </Typography>
               </Box>
             </Box>
           ))}
