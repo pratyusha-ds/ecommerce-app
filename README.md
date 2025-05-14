@@ -57,3 +57,7 @@ This is a simple full-stack e-commerce website built using React, TypeScript, an
 3.  Commit your changes.
 4.  Push to the branch.
 5.  Submit a pull request.
+
+## Credits
+
+All images taken from the free license section of [Unsplash](https://unsplash.com/)
