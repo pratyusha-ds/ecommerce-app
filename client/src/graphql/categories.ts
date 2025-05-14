@@ -12,6 +12,9 @@ export const GET_CATEGORIES = gql`
 
 export const GET_CATEGORY_PRODUCTS = gql`
   query GetCategoryProducts($id: Int!, $limit: Int!, $offset: Int!) {
+    getCategoryById(id: $id) {
+      name
+    }
     categoryProducts(id: $id, limit: $limit, offset: $offset) {
       totalCount
       items {

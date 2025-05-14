@@ -46,7 +46,7 @@ const CategoryPage: React.FC = () => {
         variant="h4"
         sx={{ mb: 4, fontWeight: "bold", textTransform: "capitalize" }}
       >
-        {categoryId}
+        {data?.getCategoryById?.name || "Category"}
       </Typography>
 
       {loading ? (
