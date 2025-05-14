@@ -1,2 +1,14 @@
-/     /admin    301
-/*    /admin.html   200
+/admin/*    /admin.html    200
+
+/order-success     /index.html   200
+/cart              /index.html   200
+/category/*        /index.html   200
+/product/*         /index.html   200
+/search            /index.html   200
+/register          /index.html   200
+/login             /index.html   200
+/profile           /index.html   200
+/checkout          /index.html   200
+
+/                 /index.html   200
+/*                /index.html   200
